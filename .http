@@ -1,0 +1,12 @@
+# Test API with help of https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+# you can set test port here
+@port=4000
+
+# base API url
+@baseAPI=http://localhost:{{port}}/api
+
+
+###
+
+GET {{baseAPI}}
