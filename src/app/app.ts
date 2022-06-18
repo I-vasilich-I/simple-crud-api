@@ -25,7 +25,7 @@ const server = http.createServer(async (req, res) => {
         const isValidData = validateData(userData);
     
         if (!isValidData) {
-          res.writeHead(500, { "Content-Type": "application/json" });
+          res.writeHead(400, { "Content-Type": "application/json" });
           res.end(JSON.stringify({ message: 'wrong data was passed in request, some/all field(s) is/are absent/invalid' }));
           return;
         }
@@ -60,7 +60,7 @@ const server = http.createServer(async (req, res) => {
             const isValidData = validateData(userData);
     
             if (!isValidData) {
-              res.writeHead(500, { "Content-Type": "application/json" });
+              res.writeHead(400, { "Content-Type": "application/json" });
               res.end(JSON.stringify({ message: 'wrong data was passed in request, some/all field(s) is/are absent/invalid' }));
               return;
             }
