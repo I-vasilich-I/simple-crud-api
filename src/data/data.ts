@@ -1,5 +1,5 @@
 import { v4 as uuidV4 } from 'uuid';
-import { IUpdateUser, IUser } from "../types";
+import { IUser } from "../types";
 
 class DataBase {
   data: Map<IUser['id'], IUser>;
@@ -29,7 +29,7 @@ class DataBase {
     return user;
   }
 
-  updateUser(user: IUpdateUser): IUser | null {
+  updateUser(user: IUser): IUser | null {
     const userInDB = this.getUser(user.id);
 
     if (!userInDB) {

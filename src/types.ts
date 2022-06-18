@@ -5,11 +5,6 @@ interface IUser {
   hobbies: string[];
 }
 
-interface IUpdateUser {
-  id: string;
-  username?: string;
-  age?: number;
-  hobbies?: string[];
-}
+type IUserWithoutId = Omit<IUser, 'id'>;
 
-export { IUser, IUpdateUser }
+export { IUser, IUserWithoutId }
