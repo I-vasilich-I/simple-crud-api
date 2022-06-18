@@ -9,7 +9,7 @@
 @baseAPI={{localhost}}/api/users
 
 # set userId that you want to test 
-@userId=072c78f9-e0eb-43dd-b13c-fe2d54b71979
+@userId=cec80162-403e-4fb3-a4f7-d756bdce78a6
 
 
 ### Get all users
@@ -61,7 +61,7 @@ DELETE {{baseAPI}}/{{userId}}
 
 ### TEST CASES
 
-### Try to reate user with wrong data
+### Try to create user with wrong data
 
 POST {{baseAPI}}
 content-type: application/json

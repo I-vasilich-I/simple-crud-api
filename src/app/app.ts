@@ -96,7 +96,7 @@ const server = http.createServer(async (req, res) => {
   
     // If no route present
     else {
-      res.writeHead(500, { "Content-Type": "application/json" });
+      res.writeHead(404, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ message: "Unknown route" }));
     }
   } catch (error: any) {
