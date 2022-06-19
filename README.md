@@ -1,6 +1,23 @@
 # simple-crud-api
 NodeJS CRUD API
 
+## How to run project
+
+1. Clone repository with command `git clone https://github.com/I-vasilich-I/simple-crud-api.git`
+2. Open project in VSCode (for example)
+3. Run command `npm i` in terminal (console) for installing all required packages (Node.js is required: <https://nodejs.org/en/>)
+4. For running project you can use the following commands:
+   - `npm run start:prod` - building production version. The project will be builded into `dist` folder and run builded files.
+   - `npm run start:dev` - run development hot-reloaded version with nodemon
+   - `npm run start:multi` - run multithreaded server
+   - `npm run test` - run tests
+   - `npm run test:watch` - run tests in watch mode
+
+## Extra details
+
+- You could check API with pre-written tests in `.http` file ([REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension installation is required)
+- `PUT` method same as `POST` requires valid user data: all required fields with proper types
+
 ## Implementation details
 
 1. Implemented endpoint `api/users`:

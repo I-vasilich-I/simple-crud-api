@@ -1,6 +1,6 @@
 # Test API with help of https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-# set port here
+# set here the same port as in .env file
 @port=4000
 
 @localhost=http://localhost:{{port}}
@@ -8,8 +8,8 @@
 # base API url
 @baseAPI={{localhost}}/api/users
 
-# set userId that you want to test 
-@userId=b82da7b9-2970-41f7-b795-e3941b465780
+# set userId that you want to test  
+@userId=855f6f53-4201-44ac-871e-5603fbf80799
 
 
 ### Get all users
