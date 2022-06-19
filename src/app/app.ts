@@ -7,9 +7,7 @@ import { IUser, IUserWithoutId } from '../types';
 
 dotenv.config();
 
-const DB = new DataBase();
-
-const server = http.createServer(async (req, res) => {
+const app = (DB: DataBase) => http.createServer(async (req, res) => {
   // /api/users : GET
   try {
     if (req.url === "/api/users") {
@@ -106,4 +104,4 @@ const server = http.createServer(async (req, res) => {
   
 });
 
-export { server };
+export { app };

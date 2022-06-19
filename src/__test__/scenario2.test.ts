@@ -1,5 +1,10 @@
 import request from 'supertest';
-import { server } from '../app/app';
+import { app } from '../app/app';
+import { DataBase } from '../data/data';
+
+const DB = new DataBase();
+
+const server = app(DB);
 
 describe('Scenario 2', () => {
   const agent = request.agent(server);

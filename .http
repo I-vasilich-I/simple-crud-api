@@ -9,7 +9,7 @@
 @baseAPI={{localhost}}/api/users
 
 # set userId that you want to test 
-@userId=cec80162-403e-4fb3-a4f7-d756bdce78a6
+@userId=b82da7b9-2970-41f7-b795-e3941b465780
 
 
 ### Get all users
