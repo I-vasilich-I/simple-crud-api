@@ -1,0 +1,135 @@
+# Test API with help of https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+# set here the same port as in .env file
+@port=4000
+
+@localhost=http://localhost:{{port}}
+
+# base API url
+@baseAPI={{localhost}}/api/users
+
+# set userId that you want to test  
+@userId=855f6f53-4201-44ac-871e-5603fbf80799
+
+
+### Get all users
+
+GET {{baseAPI}}
+
+
+### Create user
+
+POST {{baseAPI}}
+content-type: application/json
+
+{
+  "username": "Oleg",
+  "age": 34,
+  "hobbies": [
+    "learning languages",
+    "reading",
+    "gaming"
+  ]
+}
+
+
+### Get user by id
+
+GET {{baseAPI}}/{{userId}}
+
+
+### Update user by id 
+
+PUT {{baseAPI}}/{{userId}}
+content-type: application/json
+
+{
+  "username": "Dan",
+  "age": 35,
+  "hobbies": [
+    "reading",
+    "gaming"
+  ]
+}
+
+
+### Delete user by id
+
+DELETE {{baseAPI}}/{{userId}}
+
+
+
+### TEST CASES
+
+### Try to create user with wrong data
+
+POST {{baseAPI}}
+content-type: application/json
+
+{
+  "username": "Oleg",
+  "age": "34"
+}
+
+### Try to update user by id with wrong data #1
+
+PUT {{baseAPI}}/{{userId}}
+content-type: application/json
+
+{
+  "username": "Dan",
+  "age": 35,
+  "hobbies": [
+    25, 
+    46,
+    "hi there"
+  ]
+}
+
+### Try to update user by id with wrong data #2
+
+PUT {{baseAPI}}/{{userId}}
+content-type: application/json
+
+{
+  "username": "Dan",
+  "age": "35",
+  "hobbies": [
+    "reading",
+    "gaming"
+  ]
+}
+
+
+### Try to update user by id with wrong data #3
+
+PUT {{baseAPI}}/{{userId}}
+content-type: application/json
+
+{
+  "username": 49,
+  "age": 35,
+  "hobbies": [
+    "reading",
+    "gaming"
+  ]
+}
+
+
+### Try to update user by id with wrong data #4
+
+PUT {{baseAPI}}/{{userId}}
+content-type: application/json
+
+{
+  "age": 35,
+  "hobbies": [
+    "reading",
+    "gaming"
+  ]
+}
+
+
+### Test bad request
+
+GET {{localhost}}/some/route
